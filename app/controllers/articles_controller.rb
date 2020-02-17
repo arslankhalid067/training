@@ -15,8 +15,6 @@ class ArticlesController < ApplicationController
         redirect_to @article
     end
     def update
-        
-       
         @article.update(article_params)
         redirect_to @article
        
