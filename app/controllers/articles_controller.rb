@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
         @articles = Article.all
     end
     def new 
+        
     end
     def edit
 
@@ -26,8 +27,10 @@ class ArticlesController < ApplicationController
     def destroy
         
         @article.destroy
-       
-        redirect_to articles_path
+        respond_to do |format|
+        format.js
+        format.html{ redirect_to new_article_path, notice: "Delete Is Successful"}
+        end
     end
     
     private 
